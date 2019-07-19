@@ -141,32 +141,38 @@
     <div class="container">
       <div class="row mb-5">
         <div class="col-md-9">
+          <form method="GET" action="" class="main-search-form">
           <div class="main-search">
             <h4 class="mb-3">Search properties for sale</h4>
             <ul class="nav nav-tabs" id="myTab" role="tablist">
               <li class="nav-item">
-                <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home"
+                <a class="nav-link active" data-purpose="buy" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home"
                   aria-selected="true">Buy</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab"
+                <a class="nav-link" id="profile-tab" data-purpose="rent" data-toggle="tab" href="#profile" role="tab"
                   aria-controls="profile" aria-selected="false">Rent</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab"
+                <a class="nav-link" id="contact-tab" data-purpose="wanted" data-toggle="tab" href="#contact" role="tab"
                   aria-controls="contact" aria-selected="false">Wanted</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab"
+                <a class="nav-link" id="contact-tab" data-purpose="project" data-toggle="tab" href="#contact" role="tab"
                   aria-controls="contact" aria-selected="false">Project</a>
               </li>
             </ul>
             <div class="main-search-primary">
               <div class="form-group clearfix">
+                <!-- Purupose input data coming from jquery -->
+                <input type="text" value="" id="purpose_tb" name="purpose" hidden>
+                <input type="text" value="" id="min_price_tb" name="min_price" hidden>
+                <input type="text" value="" id="max_price_tb" name="max_price" hidden>
+
                 <input type="text" class="form-control primary-search" name="primary-search"
-                  placeholder="Search by city, place or postcode" id="primary-search">
+                  placeholder="Search by city, place or postcode" id="primary-search" required>
                 <div class="d-inline-block search-city">
-                  <select id="select-city" class="" placeholder="City">
+                  <select id="select-city" class="" placeholder="City" name="city">
                     <option value="" disabled selected>Select The City</option>
                     <option value="Islamabad">Islamabad</option>
                     <option value="Ahmed Nager Chatha">Ahmed Nager Chatha</option>
@@ -463,22 +469,35 @@
                 </select>
               </div> -->
               <div class="d-inline-block slider-range-wrap">
-                <div class="mb-4">
+                <div class="">
                   <label>Price(PKR)</label>
                   <div id="slider-price" class="slider-range"></div>
                   <input type="text" name="text" id="slider_amount" class=" border-0 pl-0 bg-white in-dec-control"
                     disabled="" />
                 </div>
               </div>
-              <div class="d-inline-block slider-range-wrap">
-                <div class="mb-4">
-                  <label>Area(MARLA)</label>
-                  <div id="slider-area" class="slider-range"></div>
-                  <input type="text" name="text" id="area_amount" class=" border-0 pl-0 bg-white in-dec-control"
-                    disabled="" />
-                </div>
+              <div class="d-inline-block">
+                  <label>Min Area</label>
+                  <select id="select-beds" name="min_area">
+                      <option value="100">100</option>
+                      <option value="200">200</option>
+                      <option value="400">400</option>
+                      <option value="600">600</option>
+                      <option value="800">800</option>
+                      <option value="1000">1000</option>
+                  </select>
               </div>
-
+              <div class="d-inline-block">
+                  <label>Max Area</label>
+                  <select id="select-beds" name="max-area">
+                      <option value="1000">1000</option>
+                      <option value="800">800</option>
+                      <option value="600">600</option>
+                      <option value="400">400</option>
+                      <option value="200">200</option>
+                      <option value="100">100</option>
+                  </select>
+              </div>
               <div class="d-inline-block">
                 <label>Beds</label>
                 <select id="select-beds">
@@ -498,6 +517,7 @@
               </div>
             </div>
           </div>
+        </form>
         </div>
         <div class="col-md-3">
           <div class="main-search">

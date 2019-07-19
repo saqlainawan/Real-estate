@@ -1379,3 +1379,7 @@ a:hover{
 b{
   font-weight: 600;
 }
+.slider-range-wrap{
+  width: 150px;
+  padding-left: 10px;
+}

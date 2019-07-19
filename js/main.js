@@ -119,11 +119,15 @@
  			max: 1000000,
  			values: [20000, 700000],
  			slide: function (event, ui) {
- 				$("#slider_amount").val(ui.values[0] + "PKR" + " - " + ui.values[1] + " PKR");
+				 $("#slider_amount").val(ui.values[0] + "PKR" + " - " + ui.values[1] + " PKR");
+				 $('#min_price_tb').val(ui.values[0]);
+				 $('#max_price_tb').val(ui.values[1]);
  			}
  		});
- 		// $("#slider_amount").val($("#slider-price").slider("values", 0) + " PKR" +
- 		// 	" - " + $("#slider-price").slider("values", 1) + " PKR");
+ 		$("#slider_amount").val($("#slider-price").slider("values", 0) + " PKR" +
+			 " - " + $("#slider-price").slider("values", 1) + " PKR");
+			 $('#min_price_tb').val($("#slider-price").slider("values", 0));
+				 $('#max_price_tb').val($("#slider-price").slider("values", 1));
  	};
  	siteSliderRange();
  	var areaSliderRange = function () {
@@ -281,6 +285,15 @@
  	};
  	siteDatePicker();
 
+	var searchForm = function() {
+		$('.main-search-form').submit(function(e){
+			var purpose = $('.main-search .nav-tabs .nav-link.active').data('purpose');
+			$('#purpose_tb').val(purpose);
+            $(this).submit();
+			// $(this).sub
+		});
+	};
+	searchForm();
 
 
  });
