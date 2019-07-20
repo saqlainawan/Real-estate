@@ -275,7 +275,6 @@
 
  	};
  	siteCountDown();
-
  	var siteDatePicker = function () {
 
  		if ($('.datepicker').length > 0) {
@@ -294,6 +293,28 @@
 		});
 	};
 	searchForm();
+  var searchResultSlider = function (){
+   $(".search-result-slider").owlCarousel({
 
+       navigation : true, // Show next and prev buttons
+       slideSpeed : 300,
+       paginationSpeed : 400,
+       singleItem:true,
+       items:1,
+       dots:false,
+       lazyLoad:true,
+       autoplay:false,
+       nav:true
+       // "singleItem:true" is a shortcut for:
+       // items : 1,
+       // itemsDesktop : false,
+       // itemsDesktopSmall : false,
+       // itemsTablet: false,
+       // itemsMobile : false
 
+   });
+   $( ".owl-prev").html('<i class="fa fa-chevron-left"></i>');
+   $( ".owl-next").html('<i class="fa fa-chevron-right"></i>');
+  }
+  searchResultSlider();
  });
