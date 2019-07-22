@@ -294,7 +294,7 @@
 	};
 	searchForm();
   var searchResultSlider = function (){
-   $(".search-result-slider").owlCarousel({
+   $(".search-result-slider,.single-property-slider").owlCarousel({
 
        navigation : true, // Show next and prev buttons
        slideSpeed : 300,

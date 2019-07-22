@@ -1547,3 +1547,54 @@ text-align: center;
   background: #0363d8;
   color: #FFF;
 }
+.site-wrap-relative{
+    position: relative;
+    top: 0;
+    width: 100%;
+    padding-top: 0;
+}
+.site-wrap-relative .site-navbar .site-navigation .site-menu > li > a {
+    padding: 5px;
+    border-bottom: none;
+    letter-spacing: .05em;
+    color: #484848;
+    font-weight: 400;
+}
+.site-wrap-relative .site-navbar .site-navigation .site-menu .active > a {
+    color: #0066e4;
+    font-weight: 400;
+}
+.site-wrap-relative .site-navbar .site-navigation .site-menu .has-children > a:before {
+    right: -12px;
+}
+.site-wrap-relative .site-navbar .site-navigation .site-menu > li > a:hover {
+    color: #0066e4;
+    border-bottom: none;
+}
+.site-wrap-relative .site-navbar .site-navigation .site-menu .btn-join{
+  border: 1px solid #0066e4 !important;
+}
+.site-wrap-relative .site-navbar .site-navigation .site-menu .btn-join {
+    border: 1px solid #0066e4 !important;
+    background: #0066e4;
+    color: #fff;
+}
+.site-wrap-relative .logo-wrapper img{
+  width: 120px;
+}
+.topbar{
+  transition: background-color 0.3s ease-in-out;
+  padding: 8px 0;
+  color: #fff;
+  background: -webkit-linear-gradient(-180deg,#0099e4, #00d609, #0066e4);
+  letter-spacing: 0.1em;
+}
+.single-page .site-property-title{
+  background: #6c757d;
+  color: #fff;
+  padding: 12px 0;
+  font-weight: 300;
+}
+.single-page .site-property-title h4{
+  font-weight: 300;
+}
