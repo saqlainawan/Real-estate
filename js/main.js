@@ -386,6 +386,22 @@
      });
    }
    homeSlider();
+   var closeOptin = function() {
+     $('.optin-close-btn').click(function(){
+       // console.log(1);
+       $('.optin-left-fixed').hide( "slide", { direction: "right"  }, 700 );
+     });
+   }
+   closeOptin();
+   var openOptin = function() {
+     $('.optin-open-btn').click(function(){
+       // console.log('1');
+       // console.log(1);
+       $('.optin-left-fixed').show( "slide", { direction: "right"  }, 700 );
+     });
+
+   }
+openOptin();
    var initMap = function() {
      // The location of Uluru
      var uluru = {
@@ -406,4 +422,5 @@
 
    }
    initMap();
+
  });
