@@ -2735,9 +2735,19 @@ body {
     position: relative;
     background: #fffffff7;
 }
+.signup.main-content {
+    max-width: 786px;
+    padding: 40px;
+    /* height: calc(100vh - 120px);
+    overflow-y: auto; */
+}
+
 .hero-section.not-home{
   padding-top: 120px;
 }
 a.forget-password{
   float: right;
+}
+.form-signin-heading{
+  text-transform: capitalize;
 }
