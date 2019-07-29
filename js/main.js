@@ -369,7 +369,7 @@
      // $( ".owl-next").html('<i class="fa fa-chevron-right"></i>');
    }
    singlePageSlider();
-   var homeSlider = function(){
+   var homeSlider = function() {
      var carousel = $(".home-slider").owlCarousel({
        animateOut: 'fadeOut',
        animateIn: 'fadeIn',
@@ -382,26 +382,85 @@
        lazyLoad: true,
        nav: false,
        autoplay: true,
-       loop:true
+       loop: true
      });
    }
    homeSlider();
    var closeOptin = function() {
-     $('.optin-close-btn').click(function(){
+     $('.optin-close-btn').click(function() {
        // console.log(1);
-       $('.optin-left-fixed').hide( "slide", { direction: "right"  }, 700 );
+       $('.overlay').hide();
+       $('.optin-left-fixed').hide("slide", {
+         direction: "right"
+       }, 700);
      });
    }
    closeOptin();
    var openOptin = function() {
-     $('.optin-open-btn').click(function(){
+     $('.optin-open-btn').click(function() {
        // console.log('1');
        // console.log(1);
-       $('.optin-left-fixed').show( "slide", { direction: "right"  }, 700 );
+       $('.optin-left-fixed').show("slide", {
+         direction: "right"
+       }, 700);
+       $('.overlay').show();
      });
-
    }
-openOptin();
+   // Open Call panel
+   openOptin();
+   var openCallOptin = function() {
+     $('.openCallOptin').click(function(e) {
+       e.preventDefault();
+       $('.optin').hide();
+       $('.overlay').show();
+       $('#call-optin').slideDown();
+       // $('#call-optin').show("slide", {
+       //   direction: "up"
+       // }, 700);
+     });
+   }
+   openCallOptin();
+   var openEmailOptin = function() {
+     $('.openEmailOptin').click(function(e) {
+       $('.optin').hide();
+       $('.overlay').show();
+       $('#email-optin').slideDown();
+       // $('#email-optin').show("slide", {
+       //   direction: "up"
+       // }, 700);
+     });
+   }
+   openEmailOptin();
+   var closeOptin = function() {
+     $('.optin-close-btn').click(function(e) {
+       $(this).parent('.optin').hide();
+       $('.overlay').hide();
+     });
+   }
+   closeOptin();
+   // Search Inputs
+   var searchInput = function() {
+     $('input[name=primary-search]').selectize({
+       plugins: ['remove_button'],
+       delimiter: ',',
+       persist: false,
+       create: function(input) {
+         return {
+           value: input,
+           text: input
+         }
+       }
+     });
+   }
+   // Pass the ajax request tp fetch the results
+   searchInput();
+   var searchInputChange = function(){
+     $('#primary-search-selectized').keypress(function(){
+       // $('.selectize-dropdown-content').
+      // alert(1);
+     });
+   }
+   searchInputChange();
    var initMap = function() {
      // The location of Uluru
      var uluru = {
@@ -422,5 +481,4 @@ openOptin();
 
    }
    initMap();
-
  });
